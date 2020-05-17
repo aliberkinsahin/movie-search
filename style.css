@@ -144,7 +144,7 @@ footer {
 
 @media (max-width:420px) {
     .footer-links {
-        font-size: .9rem;
+        font-size: .5rem;
     }
 
     .footer-links li:first-child {
