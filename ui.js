@@ -27,7 +27,7 @@ class UI {
                     <li class="movie-info__rate">Rate: <strong style="color: ${color} ;">${movie.vote_average}</strong> (${movie.vote_count})</li>
                     <li class="movie-info__overview">${overviewSliced}</li>
                     <div class="movie-info__buttons">
-                        <li class="${movie.id}"><a href="#!" id="detailsButton">Details</a></li>
+                        <li class="${movie.id}"><a href="#" id="detailsButton">Details</a></li>
                         <li class="${movie.id}" id="${movie.title}"><a href="#" id="similarsButton">Similar Movies</a></li>
                     </div>
                 </ul>
