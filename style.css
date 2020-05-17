@@ -500,8 +500,7 @@ nav {
 }
 
 .movie-details__image img {
-    /* object-fit: cover; */
-    max-height: 90%;
+    max-height: 60%;
     border-radius: 10px;
 }
 
