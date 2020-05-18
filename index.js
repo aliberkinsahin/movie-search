@@ -1,5 +1,6 @@
 let detect = require("detect.js")
 const userAgent = detect.parse(navigator.userAgent)
+
 const searchInput = document.getElementById("searchInput")
 const searchForm = document.querySelector(".search-button")
 const mainSection = document.querySelector(".main-section")
@@ -63,7 +64,12 @@ function cardButtonsClicked(e) {
         .then(details => {
             console.log(userAgent.browser.family)
             localStorage["id"] = movieID
-            open("details.html" , "_blank")
+            if(userAgent.browser.family === "Safari") {
+                open("details.html")
+            }
+            else {
+                open("details.html", "_blank")
+            }            
         }).catch(err => {
             localStorage.removeItem("id")
             console.error(err)
