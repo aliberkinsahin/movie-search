@@ -7,8 +7,6 @@ const searchForm = document.querySelector(".search-button")
 const mainSection = document.querySelector(".main-section")
 const scrollButton = document.querySelector("#scroll-to-top-button")
 
-const browserTest = document.querySelector(".browser")
-
 const ui = new UI()
 const database = new MovieDB()
 
@@ -64,13 +62,7 @@ function cardButtonsClicked(e) {
         .then(details => {
             console.log(userAgent.browser.family)
             localStorage["id"] = movieID
-            browserTest.textContent = userAgent.browser.family
-            if(userAgent.browser.family === "Safari") {
-                open("details.html")
-            }
-            else {
-                open("details.html", "_blank")
-            }            
+            open("details.html")          
         }).catch(err => {
             localStorage.removeItem("id")
             console.error(err)
