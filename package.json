@@ -1,0 +1,27 @@
+{
+  "name": "movie-search",
+  "version": "1.0.0",
+  "description": "Movie Search App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "browserify index.js -o bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aliberkinsahin/movie-search.git"
+  },
+  "keywords": [
+    "movies",
+    "search"
+  ],
+  "author": "Ali Berkin Sahin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aliberkinsahin/movie-search/issues"
+  },
+  "homepage": "https://github.com/aliberkinsahin/movie-search#readme",
+  "devDependencies": {
+    "browserify": "^16.5.1"
+  }
+}

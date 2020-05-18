@@ -1,3 +1,5 @@
+let detect = require("detect.js")
+const userAgent = detect.parse(navigator.userAgent)
 const searchInput = document.getElementById("searchInput")
 const searchForm = document.querySelector(".search-button")
 const mainSection = document.querySelector(".main-section")
@@ -5,7 +7,6 @@ const scrollButton = document.querySelector("#scroll-to-top-button")
 
 const ui = new UI()
 const database = new MovieDB()
-
 
 eventListeners()
 
@@ -56,7 +57,7 @@ function cardButtonsClicked(e) {
         let movieID = e.target.parentElement.className
         database.getMovieDetails(movieID)
         .then(details => {
-            
+            console.log(userAgent.browser.family)
             localStorage["id"] = movieID
             window.open("details.html" , "_blank")
         }).catch(err => {
