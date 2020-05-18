@@ -6,6 +6,9 @@ const searchForm = document.querySelector(".search-button")
 const mainSection = document.querySelector(".main-section")
 const scrollButton = document.querySelector("#scroll-to-top-button")
 
+const detailsButton = document.querySelector("#detailsButton")
+const similarsButton = document.querySelector("#similarsButton")
+
 const ui = new UI()
 const database = new MovieDB()
 
@@ -15,6 +18,7 @@ function eventListeners() {
     document.addEventListener("DOMContentLoaded", showTopMovies)
     searchForm.addEventListener("click", searchMovie)
     mainSection.addEventListener("click", cardButtonsClicked)
+    
 
     scrollButton.addEventListener("click", () => {
         window.scrollTo({
@@ -60,7 +64,7 @@ function cardButtonsClicked(e) {
         .then(details => {
             console.log(userAgent.browser.family)
             localStorage["id"] = movieID
-            window.open("details.html" , "_blank")
+            open("details.html" , "_blank")
         }).catch(err => {
             localStorage.removeItem("id")
             console.error(err)
@@ -75,6 +79,7 @@ function cardButtonsClicked(e) {
         }).catch(err => console.error(err))
     }
 }
+
 
 
 
