@@ -62,7 +62,7 @@ function cardButtonsClicked(e) {
         .then(details => {
             console.log(userAgent.browser.family)
             localStorage["id"] = movieID
-            open("details.html")          
+            windowReference.location = "details.html"
         }).catch(err => {
             localStorage.removeItem("id")
             console.error(err)
