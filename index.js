@@ -55,14 +55,7 @@ function cardButtonsClicked(e) {
         let movieID = e.target.parentElement.className
         database.getMovieDetails(movieID)
         .then(() => {
-            let ua = navigator.userAgent.toLowerCase()
-            if(ua.indexOf("safari") != -1 ) {
-                window.open("details.html?movieID=" + movieID)
-            }
-            else {
-                window.open("details.html?movieID=" + movieID, "_blank")
-            }
-            
+            window.open("details.html?movieID=" + movieID, "_blank")  
         }).catch(err => {
             console.error(err)
         })
