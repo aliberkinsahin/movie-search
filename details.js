@@ -13,14 +13,15 @@ function eventListeners() {
     scrollButton.addEventListener("click", () => {
         window.scrollTo({
             top:0,
-            left:0,
-            behavior:"smooth"
+            left:0
         })
     })
 }
 
 function showDetails(e) {
-    localStorage.removeItem("id")
+    const queryString = window.location.search
+    const urlParameters = new URLSearchParams(queryString)
+    let movieID = urlParameters.get("movieID")
 
     database.getMovieDetails(movieID)
     .then(details => {
